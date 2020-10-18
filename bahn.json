@@ -1,0 +1,77 @@
+{
+	"bahn" :
+	[
+		{
+			"mannschaft" : "[Mannschaftsname Bahn 1]",
+			"spielername" : "[SpielernameAw Bahn 1]",
+			"sp": "[Satzpunkte Spieler Bahn 1]",
+			"wurf" : "[Wurf Spieler Bahn 1]",
+			"gesamt" : "[Holz Spieler Bahn 1]",
+			"satz_wurf" : "[Wurf Satz $, 1]",
+			"satz_gesamt": "[Holz Satz $, 1]"
+		},
+		{
+			"mannschaft" : "[Mannschaftsname Bahn 2]",
+			"spielername" : "[SpielernameAw Bahn 2]",
+			"sp": "[Satzpunkte Spieler Bahn 2]",
+			"wurf" : "[Wurf Spieler Bahn 2]",
+			"gesamt" : "[Holz Spieler Bahn 2]",
+			"satz_wurf" : "[Wurf Satz $, 2]",
+			"satz_gesamt": "[Holz Satz $, 2]"
+		},
+		{
+			"mannschaft" : "[Mannschaftsname Bahn 3]",
+			"spielername" : "[SpielernameAw Bahn 3]",
+			"sp": "[Satzpunkte Spieler Bahn 3]",
+			"wurf" : "[Wurf Spieler Bahn 3]",
+			"gesamt" : "[Holz Spieler Bahn 3]",
+			"satz_wurf" : "[Wurf Satz $, 3]",
+			"satz_gesamt": "[Holz Satz $, 3]"
+		},
+		{
+			"mannschaft" : "[Mannschaftsname Bahn 4]",
+			"spielername" : "[SpielernameAw Bahn 4]",
+			"sp": "[Satzpunkte Spieler Bahn 4]",
+			"wurf" : "[Wurf Spieler Bahn 4]",
+			"gesamt" : "[Holz Spieler Bahn 4]",
+			"satz_wurf" : "[Wurf Satz $, 4]",
+			"satz_gesamt": "[Holz Satz $, 4]"
+		},
+		{
+			"mannschaft" : "[Mannschaftsname Bahn 5]",
+			"spielername" : "[SpielernameAw Bahn 5]",
+			"sp": "[Satzpunkte Spieler Bahn 5]",
+			"wurf" : "[Wurf Spieler Bahn 5]",
+			"gesamt" : "[Holz Spieler Bahn 5]",
+			"satz_wurf" : "[Wurf Satz $, 5]",
+			"satz_gesamt": "[Holz Satz $, 5]"
+		},
+		{
+			"mannschaft" : "[Mannschaftsname Bahn 6]",
+			"spielername" : "[SpielernameAw Bahn 6]",
+			"sp": "[Satzpunkte Spieler Bahn 6]",
+			"wurf" : "[Wurf Spieler Bahn 6]",
+			"gesamt" : "[Holz Spieler Bahn 6]",
+			"satz_wurf" : "[Wurf Satz $, 6]",
+			"satz_gesamt": "[Holz Satz $, 6]"
+		},
+		{
+			"mannschaft" : "[Mannschaftsname Bahn 7]",
+			"spielername" : "[SpielernameAw Bahn 7]",
+			"sp": "[Satzpunkte Spieler Bahn 7]",
+			"wurf" : "[Wurf Spieler Bahn 7]",
+			"gesamt" : "[Holz Spieler Bahn 7]",
+			"satz_wurf" : "[Wurf Satz $, 7]",
+			"satz_gesamt": "[Holz Satz $, 7]"
+		},
+		{
+			"mannschaft" : "[Mannschaftsname Bahn 8]",
+			"spielername" : "[SpielernameAw Bahn 8]",
+			"sp": "[Satzpunkte Spieler Bahn 8]",
+			"wurf" : "[Wurf Spieler Bahn 8]",
+			"gesamt" : "[Holz Spieler Bahn 8]",
+			"satz_wurf" : "[Wurf Satz $, 8]",
+			"satz_gesamt": "[Holz Satz $, 8]"
+		}
+	]
+}
