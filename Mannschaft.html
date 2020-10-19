@@ -4,37 +4,37 @@
 <head>
 <meta charset="utf-8"/>
 </head>
-<!-- 
+<!--
 <script>
 setTimeout(function(){window.location = window.location}, 1000);
 </script>
 -->
 <style type="text/css">
 body {overflow:hidden; /* Hide scrollbars */}
-.block-num{width:50px;max-width:50px;display:clip}
-.block-cap{width:240px;max-width:240px:dispaly:clip}
-.block-scr{width:40px;max-width:40px:display:clip;align:right}
-.block-gsm{width:210px;max-width:240px:dispaly:clip}
-.block-mp {width:60px;max-width:240px:dispaly:clip}
+.block-num{width:50px;max-width:50px}
+.block-cap{width:240px;max-width:240px}
+.block-scr{width:40px;max-width:40px;text-align:right}
+.block-gsm{width:210px;max-width:240px}
+.block-mp {width:60px;max-width:240px}
 .tg  {border-collapse:collapse;border-spacing:0;table-layout:fixed;}
 .tg td{font-family:Geneva, sans-serif;font-size:20px;font-weight:bold;padding:2px 2px;border-style:solid;border-width:3px;overflow:hidden;word-break:normal;border-color:#cccccc}
 .tg th{font-family:Geneva, sans-serif;font-size:20px;font-weight:bold;padding:2px 2px;border-style:solid;border-width:3px;overflow:hidden;word-break:normal;border-color:#cccccc}
 .tg .caption {background-color:#ffffff;font-size:25px;                                                                white-space:nowrap}
 .tg .logo    {background-color:#ffffff;text-align:center;white-space:nowrap}
-.tg .data    {background-color:#ffffff;                  width:40px;max-widht:40px;overflow:hidden;text-overflow:clip;white-space:nowrap}
-.tg .data-num{background-color:#ffffff;text-align:center;width:40px;max-widht:40px;overflow:hidden;text-overflow:clip;white-space:nowrap}
-.tg .data-right{background-color:#ffffff;text-align:right;width:40px;max-widht:40px;overflow:hidden;text-overflow:clip;white-space:nowrap}
-.tg .label   {background-color:#cccccc;                  width:40px;max-widht:40px;overflow:hidden;text-overflow:clip;white-space:nowrap}
-.tg .label-num{background-color:#cccccc;text-align:center;width:40px;max-widht:40px;overflow:hidden;text-overflow:clip;white-space:nowrap}
-.tg .label-right{background-color:#cccccc;text-align:right;width:40px;max-widht:40px;overflow:hidden;text-overflow:clip;white-space:nowrap}
+.tg .data    {background-color:#ffffff;                  width:40px;overflow:hidden;text-overflow:clip;white-space:nowrap}
+.tg .data-num{background-color:#ffffff;text-align:center;width:40px;overflow:hidden;text-overflow:clip;white-space:nowrap}
+.tg .data-right{background-color:#ffffff;text-align:right;width:40px;overflow:hidden;text-overflow:clip;white-space:nowrap}
+.tg .label   {background-color:#cccccc;                  width:40px;overflow:hidden;text-overflow:clip;white-space:nowrap}
+.tg .label-num{background-color:#cccccc;text-align:center;width:40px;overflow:hidden;text-overflow:clip;white-space:nowrap}
+.tg .label-right{background-color:#cccccc;text-align:right;width:40px;overflow:hidden;text-overflow:clip;white-space:nowrap}
 .tg .free      {border-top-style:hidden;border-bottom-style:hidden;width:50%}
 </style>
 <table class="tg">
   <tr>
     <td class="logo" colspan="5" rowspan="6"><img src="Heim.png" alt="Logo Heimmannschaft" height="175px" width="auto"/></td>
 	<td class="free" rowspan="8"></td>
-    <td class="caption" colspan="8" id="mannschaft0">[Mannschaftsname 1]</td>
-    <td class="caption" colspan="8" id="mannschaft1" align="right">[Mannschaftsname 2]</td>
+    <td class="caption" colspan="8" id="mannschaft0"></td>
+    <td class="caption" colspan="8" id="mannschaft1" align="right"></td>
 	<td class="free" rowspan="8"></td>
     <td class="logo" colspan="5" rowspan="6"><img src="Gast.png" alt="Logo Gastmannschaft" height="175px" width="auto"/></td>
   </tr>
@@ -57,99 +57,99 @@ body {overflow:hidden; /* Hide scrollbars */}
     <td class="label-right">Name</td>
   </tr>
   <tr>
-    <td class="data"><div class="block-cap" id="spieler00">[SpielernameAw 1, 1]</div></td>
-    <td class="data-num"><div class="block-num">[Wurf Spieler 1, 1]</div></td>
-    <td class="data-num"><div class="block-num">[Holz Satz 1, 1, 1]</div></td>
-    <td class="data-num"><div class="block-num">[Holz Satz 2, 1, 1]</div></td>
-    <td class="data-num"><div class="block-num">[Holz Satz 3, 1, 1]</div></td>
-    <td class="data-num"><div class="block-num">[Holz Satz 4, 1, 1]</div></td>
-    <td class="data-num"><div class="block-num">[Holz Spieler 1, 1]</div></td>
-    <td class="data-num"><div class="block-num">[Satzpunkte Spieler 1, 1]</div></td>
-    <td class="data-num"><div class="block-num">[Satzpunkte Spieler 2, 1]</div></td>
-    <td class="data-num"><div class="block-num">[Holz Spieler 2, 1]</div></td>
-    <td class="data-num"><div class="block-num">[Holz Satz 4, 2, 1]</div></td>
-    <td class="data-num"><div class="block-num">[Holz Satz 3, 2, 1]</div></td>
-    <td class="data-num"><div class="block-num">[Holz Satz 2, 2, 1]</div></td>
-    <td class="data-num"><div class="block-num">[Holz Satz 1, 2, 1]</div></td>
-    <td class="data-num"><div class="block-num">[Wurf Spieler 2, 1]</div></td>
-    <td class="data-right"><div class="block-cap" id="spieler10">[SpielernameAw 2, 1]</div></td>
+    <td class="data"><div class="block-cap" id="spieler00"></div></td>
+    <td class="data-num"><div class="block-num"></div></td>
+    <td class="data-num"><div class="block-num"></div></td>
+    <td class="data-num"><div class="block-num"></div></td>
+    <td class="data-num"><div class="block-num"></div></td>
+    <td class="data-num"><div class="block-num"></div></td>
+    <td class="data-num"><div class="block-num"></div></td>
+    <td class="data-num"><div class="block-num"></div></td>
+    <td class="data-num"><div class="block-num"></div></td>
+    <td class="data-num"><div class="block-num"></div></td>
+    <td class="data-num"><div class="block-num"></div></td>
+    <td class="data-num"><div class="block-num"></div></td>
+    <td class="data-num"><div class="block-num"></div></td>
+    <td class="data-num"><div class="block-num"></div></td>
+    <td class="data-num"><div class="block-num"></div></td>
+    <td class="data-right"><div class="block-cap" id="spieler10"></div></td>
   </tr>
   <tr>
-    <td class="data"><div class="block-cap" id="spieler01">[SpielernameAw 1, 2]</div></td>
-    <td class="data-num"><div class="block-num">[Wurf Spieler 1, 2]</div></td>
-    <td class="data-num"><div class="block-num">[Holz Satz 1, 1, 2]</div></td>
-    <td class="data-num"><div class="block-num">[Holz Satz 2, 1, 2]</div></td>
-    <td class="data-num"><div class="block-num">[Holz Satz 3, 1, 2]</div></td>
-    <td class="data-num"><div class="block-num">[Holz Satz 4, 1, 2]</div></td>
-    <td class="data-num"><div class="block-num">[Holz Spieler 1, 2]</div></td>
-    <td class="data-num"><div class="block-num">[Satzpunkte Spieler 1, 2]</div></td>
-    <td class="data-num"><div class="block-num">[Satzpunkte Spieler 2, 2]</div></td>
-    <td class="data-num"><div class="block-num">[Holz Spieler 2, 2]</div></td>
-    <td class="data-num"><div class="block-num">[Holz Satz 4, 2, 2]</div></td>
-    <td class="data-num"><div class="block-num">[Holz Satz 3, 2, 2]</div></td>
-    <td class="data-num"><div class="block-num">[Holz Satz 2, 2, 2]</div></td>
-    <td class="data-num"><div class="block-num">[Holz Satz 1, 2, 2]</div></td>
-    <td class="data-num"><div class="block-num">[Wurf Spieler 2, 2]</div></td>
-    <td class="data-right"><div class="block-cap" id="spieler11">[SpielernameAw 2, 2]</div></td>
+    <td class="data"><div class="block-cap" id="spieler01"></div></td>
+    <td class="data-num"><div class="block-num"></div></td>
+    <td class="data-num"><div class="block-num"></div></td>
+    <td class="data-num"><div class="block-num"></div></td>
+    <td class="data-num"><div class="block-num"></div></td>
+    <td class="data-num"><div class="block-num"></div></td>
+    <td class="data-num"><div class="block-num"></div></td>
+    <td class="data-num"><div class="block-num"></div></td>
+    <td class="data-num"><div class="block-num"></div></td>
+    <td class="data-num"><div class="block-num"></div></td>
+    <td class="data-num"><div class="block-num"></div></td>
+    <td class="data-num"><div class="block-num"></div></td>
+    <td class="data-num"><div class="block-num"></div></td>
+    <td class="data-num"><div class="block-num"></div></td>
+    <td class="data-num"><div class="block-num"></div></td>
+    <td class="data-right"><div class="block-cap" id="spieler11"></div></td>
   </tr>
   <tr>
-    <td class="data"><div class="block-cap" id="spieler02">[SpielernameAw 1, 3]</div></td>
-    <td class="data-num"><div class="block-num">[Wurf Spieler 1, 3]</div></td>
-    <td class="data-num"><div class="block-num">[Holz Satz 1, 1, 3]</div></td>
-    <td class="data-num"><div class="block-num">[Holz Satz 2, 1, 3]</div></td>
-    <td class="data-num"><div class="block-num">[Holz Satz 3, 1, 3]</div></td>
-    <td class="data-num"><div class="block-num">[Holz Satz 4, 1, 3]</div></td>
-    <td class="data-num"><div class="block-num">[Holz Spieler 1, 3]</div></td>
-    <td class="data-num"><div class="block-num">[Satzpunkte Spieler 1, 3]</div></td>
-    <td class="data-num"><div class="block-num">[Satzpunkte Spieler 2, 3]</div></td>
-    <td class="data-num"><div class="block-num">[Holz Spieler 2, 3]</div></td>
-    <td class="data-num"><div class="block-num">[Holz Satz 4, 2, 3]</div></td>
-    <td class="data-num"><div class="block-num">[Holz Satz 3, 2, 3]</div></td>
-    <td class="data-num"><div class="block-num">[Holz Satz 2, 2, 3]</div></td>
-    <td class="data-num"><div class="block-num">[Holz Satz 1, 2, 3]</div></td>
-    <td class="data-num"><div class="block-num">[Wurf Spieler 2, 3]</div></td>
-    <td class="data-right"><div class="block-cap" id="spieler12">[SpielernameAw 2, 3]</div></td>
+    <td class="data"><div class="block-cap" id="spieler02"></div></td>
+    <td class="data-num"><div class="block-num"></div></td>
+    <td class="data-num"><div class="block-num"></div></td>
+    <td class="data-num"><div class="block-num"></div></td>
+    <td class="data-num"><div class="block-num"></div></td>
+    <td class="data-num"><div class="block-num"></div></td>
+    <td class="data-num"><div class="block-num"></div></td>
+    <td class="data-num"><div class="block-num"></div></td>
+    <td class="data-num"><div class="block-num"></div></td>
+    <td class="data-num"><div class="block-num"></div></td>
+    <td class="data-num"><div class="block-num"></div></td>
+    <td class="data-num"><div class="block-num"></div></td>
+    <td class="data-num"><div class="block-num"></div></td>
+    <td class="data-num"><div class="block-num"></div></td>
+    <td class="data-num"><div class="block-num"></div></td>
+    <td class="data-right"><div class="block-cap" id="spieler12"></div></td>
   </tr>
   <tr>
-    <td class="data"><div class="block-cap" id="spieler03">[SpielernameAw 1, 4]</div></td>
-    <td class="data-num"><div class="block-num">[Wurf Spieler 1, 4]</div></td>
-    <td class="data-num"><div class="block-num">[Holz Satz 1, 1, 4]</div></td>
-    <td class="data-num"><div class="block-num">[Holz Satz 2, 1, 4]</div></td>
-    <td class="data-num"><div class="block-num">[Holz Satz 3, 1, 4]</div></td>
-    <td class="data-num"><div class="block-num">[Holz Satz 4, 1, 4]</div></td>
-    <td class="data-num"><div class="block-num">[Holz Spieler 1, 4]</div></td>
-    <td class="data-num"><div class="block-num">[Satzpunkte Spieler 1, 4]</div></td>
-    <td class="data-num"><div class="block-num">[Satzpunkte Spieler 2, 4]</div></td>
-    <td class="data-num"><div class="block-num">[Holz Spieler 2, 4]</div></td>
-    <td class="data-num"><div class="block-num">[Holz Satz 4, 2, 4]</div></td>
-    <td class="data-num"><div class="block-num">[Holz Satz 3, 2, 4]</div></td>
-    <td class="data-num"><div class="block-num">[Holz Satz 2, 2, 4]</div></td>
-    <td class="data-num"><div class="block-num">[Holz Satz 1, 2, 4]</div></td>
-    <td class="data-num"><div class="block-num">[Wurf Spieler 2, 4]</div></td>
-    <td class="data-right"><div class="block-cap" id="spieler13">[SpielernameAw 2, 4]</div></td>
+    <td class="data"><div class="block-cap" id="spieler03"></div></td>
+    <td class="data-num"><div class="block-num"></div></td>
+    <td class="data-num"><div class="block-num"></div></td>
+    <td class="data-num"><div class="block-num"></div></td>
+    <td class="data-num"><div class="block-num"></div></td>
+    <td class="data-num"><div class="block-num"></div></td>
+    <td class="data-num"><div class="block-num"></div></td>
+    <td class="data-num"><div class="block-num"></div></td>
+    <td class="data-num"><div class="block-num"></div></td>
+    <td class="data-num"><div class="block-num"></div></td>
+    <td class="data-num"><div class="block-num"></div></td>
+    <td class="data-num"><div class="block-num"></div></td>
+    <td class="data-num"><div class="block-num"></div></td>
+    <td class="data-num"><div class="block-num"></div></td>
+    <td class="data-num"><div class="block-num"></div></td>
+    <td class="data-right"><div class="block-cap" id="spieler13"></div></td>
   </tr>
   <tr>
     <td class="label-num">Volle</td>
     <td class="label-num">Abr</td>
     <td class="label-num">F</td>
-    <td class="label-num">Ges</td> 
+    <td class="label-num">Ges</td>
     <td class="label-num">MP</td>
-    <td class="data"><div class="block-cap" id="spieler04">[SpielernameAw 1, 5]</div></td>
-    <td class="data-num"><div class="block-num">[Wurf Spieler 1, 5]</div></td>
-    <td class="data-num"><div class="block-num">[Holz Satz 1, 1, 5]</div></td>
-    <td class="data-num"><div class="block-num">[Holz Satz 2, 1, 5]</div></td>
-    <td class="data-num"><div class="block-num">[Holz Satz 3, 1, 5]</div></td>
-    <td class="data-num"><div class="block-num">[Holz Satz 4, 1, 5]</div></td>
-    <td class="data-num"><div class="block-num">[Holz Spieler 1, 5]</div></td>
-    <td class="data-num"><div class="block-num">[Satzpunkte Spieler 1, 5]</div></td>
-    <td class="data-num"><div class="block-num">[Satzpunkte Spieler 2, 5]</div></td>
-    <td class="data-num"><div class="block-num">[Holz Spieler 2, 5]</div></td>
-    <td class="data-num"><div class="block-num">[Holz Satz 4, 2, 5]</div></td>
-    <td class="data-num"><div class="block-num">[Holz Satz 3, 2, 5]</div></td>
-    <td class="data-num"><div class="block-num">[Holz Satz 2, 2, 5]</div></td>
-    <td class="data-num"><div class="block-num">[Holz Satz 1, 2, 5]</div></td>
-    <td class="data-num"><div class="block-num">[Wurf Spieler 2, 5]</div></td>
-    <td class="data-right"><div class="block-cap" id="spieler14">[SpielernameAw 2, 5]</div></td>
+    <td class="data"><div class="block-cap" id="spieler04"></div></td>
+    <td class="data-num"><div class="block-num"></div></td>
+    <td class="data-num"><div class="block-num"></div></td>
+    <td class="data-num"><div class="block-num"></div></td>
+    <td class="data-num"><div class="block-num"></div></td>
+    <td class="data-num"><div class="block-num"></div></td>
+    <td class="data-num"><div class="block-num"></div></td>
+    <td class="data-num"><div class="block-num"></div></td>
+    <td class="data-num"><div class="block-num"></div></td>
+    <td class="data-num"><div class="block-num"></div></td>
+    <td class="data-num"><div class="block-num"></div></td>
+    <td class="data-num"><div class="block-num"></div></td>
+    <td class="data-num"><div class="block-num"></div></td>
+    <td class="data-num"><div class="block-num"></div></td>
+    <td class="data-num"><div class="block-num"></div></td>
+    <td class="data-right"><div class="block-cap" id="spieler14"></div></td>
     <td class="label-num">MP</td>
     <td class="label-num">Ges</td>
     <td class="label-num">F</td>
@@ -157,105 +157,36 @@ body {overflow:hidden; /* Hide scrollbars */}
     <td class="label-num">Volle</td>
   </tr>
   <tr>
-    <td class="data-num"><div class="block-num" id="gesamt0">[Volle Mannschaft 1]</div></td>
-    <td class="data-num"><div class="block-num">[Abraeumer Mannschaft 1]</div></td>
-    <td class="data-num"><div class="block-num">[Fehlwuerfe Mannschaft 1]</div></td>
-    <td class="data-num"><div class="block-num">[Holz Mannschaft 1]</div></td>
-    <td class="data-num"><div class="block-num">[Mannschaftspunkte Mannschaft 1]</div></td>
-    <td class="data"><div class="block-cap" id="spieler05">[SpielernameAw 1, 6]</div></td>
-    <td class="data-num"><div class="block-num">[Wurf Spieler 1, 6]</div></td>
-    <td class="data-num"><div class="block-num">[Holz Satz 1, 1, 6]</div></td>
-    <td class="data-num"><div class="block-num">[Holz Satz 2, 1, 6]</div></td>
-    <td class="data-num"><div class="block-num">[Holz Satz 3, 1, 6]</div></td>
-    <td class="data-num"><div class="block-num">[Holz Satz 4, 1, 6]</div></td>
-    <td class="data-num"><div class="block-num">[Holz Spieler 1, 6]</div></td>
-    <td class="data-num"><div class="block-num">[Satzpunkte Spieler 1, 6]</div></td>
-    <td class="data-num"><div class="block-num">[Satzpunkte Spieler 2, 6]</div></td>
-    <td class="data-num"><div class="block-num">[Holz Spieler 2, 6]</div></td>
-    <td class="data-num"><div class="block-num">[Holz Satz 4, 2, 6]</div></td>
-    <td class="data-num"><div class="block-num">[Holz Satz 3, 2, 6]</div></td>
-    <td class="data-num"><div class="block-num">[Holz Satz 2, 2, 6]</div></td>
-    <td class="data-num"><div class="block-num">[Holz Satz 1, 2, 6]</div></td>
-    <td class="data-num"><div class="block-num">[Wurf Spieler 2, 6]</div></td>
-    <td class="data-right"><div class="block-cap" id="spieler15">[SpielernameAw 2, 6]</div></td>
-    <td class="data-num"><div class="block-num">[Mannschaftspunkte Mannschaft 2]</div></td>
-    <td class="data-num"><div class="block-num">[Holz Mannschaft 2]</div></td>
-    <td class="data-num"><div class="block-num">[Fehlwuerfe Mannschaft 2]</div></td>
-    <td class="data-num"><div class="block-num">[Abraeumer Mannschaft 2]</div></td>
-    <td class="data-num"><div class="block-num" id="gesamt1">[Volle Mannschat 2]</div></td>
+    <td class="data-num"><div class="block-num" id="gesamt0"></div></td>
+    <td class="data-num"><div class="block-num"></div></td>
+    <td class="data-num"><div class="block-num"></div></td>
+    <td class="data-num"><div class="block-num"></div></td>
+    <td class="data-num"><div class="block-num"></div></td>
+    <td class="data"><div class="block-cap" id="spieler05"></div></td>
+    <td class="data-num"><div class="block-num"></div></td>
+    <td class="data-num"><div class="block-num"></div></td>
+    <td class="data-num"><div class="block-num"></div></td>
+    <td class="data-num"><div class="block-num"></div></td>
+    <td class="data-num"><div class="block-num"></div></td>
+    <td class="data-num"><div class="block-num"></div></td>
+    <td class="data-num"><div class="block-num"></div></td>
+    <td class="data-num"><div class="block-num"></div></td>
+    <td class="data-num"><div class="block-num"></div></td>
+    <td class="data-num"><div class="block-num"></div></td>
+    <td class="data-num"><div class="block-num"></div></td>
+    <td class="data-num"><div class="block-num"></div></td>
+    <td class="data-num"><div class="block-num"></div></td>
+    <td class="data-num"><div class="block-num"></div></td>
+    <td class="data-right"><div class="block-cap" id="spieler15"></div></td>
+    <td class="data-num"><div class="block-num"></div></td>
+    <td class="data-num"><div class="block-num"></div></td>
+    <td class="data-num"><div class="block-num"></div></td>
+    <td class="data-num"><div class="block-num"></div></td>
+    <td class="data-num"><div class="block-num" id="gesamt1"></div></td>
   </tr>
 </table>
+<script src="mannschaft.js"></script>
 <script>
-  setInterval(function(){loadData()}, 1000);
-  function loadData() {
-    var requestURL = "mannschaft.json";
-    var request = new XMLHttpRequest();
-    request.open('GET', requestURL);
-    request.responseType = 'json';
-    request.send();
-    request.onload = function() {
-      var data = request.response;
-      var mannschaft = data.mannschaft[0];
-      var el = document.getElementById("mannschaft0");
-      el.innerHTML = mannschaft.name;
-      el = document.getElementById("gesamt0");
-      el.innerHTML = mannschaft.volle;
-      el = el.parentElement.nextElementSibling.firstChild;
-      el.innerHTML = mannschaft.abr;
-      el = el.parentElement.nextElementSibling.firstChild;
-      el.innerHTML = mannschaft.f;
-      el = el.parentElement.nextElementSibling.firstChild;
-      el.innerHTML = mannschaft.gesamt;
-      el = el.parentElement.nextElementSibling.firstChild;
-      el.innerHTML = mannschaft.mp;
-      var i;
-      for (i = 0; i < mannschaft.spieler.length; i++) {
-        var spieler = mannschaft.spieler[i];
-        el = document.getElementById("spieler0" + i.toString());
-        el.innerHTML = spieler.spielername;
-        el = el.parentElement.nextElementSibling.firstChild; 
-        el.innerHTML = spieler.wurf;
-        el = el.parentElement.nextElementSibling.firstChild;
-        var j;		
-        for (j = 0; j < spieler.satz.length; j++) {
-          el.innerHTML = spieler.satz[j];
-          el = el.parentElement.nextElementSibling.firstChild; 
-        }
-        el.innerHTML = spieler.gesamt;
-        el = el.parentElement.nextElementSibling.firstChild; 
-        el.innerHTML = spieler.sp;
-      }		
-
-      mannschaft = data.mannschaft[1];
-      el = document.getElementById("mannschaft1");
-      el.innerHTML = mannschaft.name;
-      el = document.getElementById("gesamt1");
-      el.innerHTML = mannschaft.volle;
-      el = el.parentElement.previousElementSibling.firstChild;
-      el.innerHTML = mannschaft.abr;
-      el = el.parentElement.previousElementSibling.firstChild;
-      el.innerHTML = mannschaft.f;
-      el = el.parentElement.previousElementSibling.firstChild;
-      el.innerHTML = mannschaft.gesamt;
-      el = el.parentElement.previousElementSibling.firstChild;
-      el.innerHTML = mannschaft.mp;
-      for (i = 0; i < mannschaft.spieler.length; i++) {
-        var spieler = mannschaft.spieler[i];
-        el = document.getElementById("spieler1" + i.toString());
-        el.innerHTML = spieler.spielername;
-        el = el.parentElement.previousElementSibling.firstChild; 
-        el.innerHTML = spieler.wurf;
-        el = el.parentElement.previousElementSibling.firstChild;
-        var j;		
-        for (j = 0; j < spieler.satz.length; j++) {
-          el.innerHTML = spieler.satz[j];
-          el = el.parentElement.previousElementSibling.firstChild; 
-        }
-        el.innerHTML = spieler.gesamt;
-        el = el.parentElement.previousElementSibling.firstChild; 
-        el.innerHTML = spieler.sp;
-      }		
-    }
-  }
+  setInterval(loadMannschaftData, 1000, 6, 4);
 </script>
 </html>
