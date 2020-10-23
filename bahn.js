@@ -1,17 +1,16 @@
-function loadBahnData(numLanes) {
+function loadBahnData(requestURL, firstLane, lastLane) {
   try {
-    var requestURL = "bahn.json";
     var request = new XMLHttpRequest();
     request.open('GET', requestURL);
     request.responseType = 'arraybuffer';
-    request.onload = writeBahn.bind(null, request, numLanes);
+    request.onload = writeBahn.bind(null, request, firstLane, lastLane);
     request.send();
   } catch (ex) {
     console.error("loadBahnData", ex.message);
   }
 }
 
-function writeBahn(request, numLanes) {
+function writeBahn(request, firstLane, lastLane) {
   try {
     var laneCnt;
     var decoder = new TextDecoder("windows-1252");
@@ -20,38 +19,38 @@ function writeBahn(request, numLanes) {
       data.bahn4, data.bahn5, data.bahn6, data.bahn7];
 
     var el = document.getElementById("name");
-    for (laneCnt = 0; laneCnt < numLanes; laneCnt++) {
+    for (laneCnt = firstLane - 1; laneCnt < lastLane; laneCnt++) {
       el.innerHTML = lane[laneCnt].spielername + " ("
         + lane[laneCnt].sp + ")";
-      if (laneCnt < numLanes -1) {
+      if (laneCnt < lastLane -1) {
         el = el.parentElement.nextElementSibling.nextElementSibling.firstChild;
       }
     }
 
     var el = document.getElementById("team");
-    for (laneCnt = 0; laneCnt < numLanes; laneCnt++) {
+    for (laneCnt = firstLane - 1; laneCnt < lastLane; laneCnt++) {
       el.innerHTML = lane[laneCnt].mannschaft;
-      if (laneCnt < numLanes -1) {
+      if (laneCnt < lastLane -1) {
         el = el.parentElement.nextElementSibling.nextElementSibling.firstChild;
       }
     }
 
     var el = document.getElementById("total");
-    for (laneCnt = 0; laneCnt < numLanes; laneCnt++) {
+    for (laneCnt = firstLane - 1; laneCnt < lastLane; laneCnt++) {
       el.innerHTML = lane[laneCnt].wurf;
       el = el.parentElement.nextElementSibling.nextElementSibling.firstChild;
       el.innerHTML = lane[laneCnt].gesamt;
-      if (laneCnt < numLanes -1) {
+      if (laneCnt < lastLane -1) {
         el = el.parentElement.nextElementSibling.nextElementSibling.nextElementSibling.firstChild;
       }
     }
 
     var el = document.getElementById("heat");
-    for (laneCnt = 0; laneCnt < numLanes; laneCnt++) {
+    for (laneCnt = firstLane - 1; laneCnt < lastLane; laneCnt++) {
       el.innerHTML = lane[laneCnt].durchgang_wurf;
       el = el.parentElement.nextElementSibling.nextElementSibling.firstChild;
       el.innerHTML = lane[laneCnt].durchgang_gesamt;
-      if (laneCnt < numLanes -1) {
+      if (laneCnt < lastLane -1) {
         el = el.parentElement.nextElementSibling.nextElementSibling.nextElementSibling.firstChild;
       }
     }
