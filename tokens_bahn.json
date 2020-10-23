@@ -1,13 +1,13 @@
 {
 	"bahn0" :
 		{
-			"mannschaft" : "ä-ö-ü-ß-Ä-Ö-Ü",
-			"spielername" : "Roßdorf",
-			"sp": "0,5",
-			"wurf" : "101",
-			"gesamt" : "589",
-			"durchgang_wurf" : "11",
-			"durchgang_gesamt": "71"
+			"mannschaft" : "[Mannschaftsname Bahn 1]",
+			"spielername" : "[SpielernameAw Bahn 1]",
+			"sp": "[Satzpunkte Spieler Bahn 1]",
+			"wurf" : "[Wurf Spieler Bahn 1]",
+			"gesamt" : "[Holz Spieler Bahn 1]",
+			"durchgang_wurf" : "[Wurf Satz $, 1]",
+			"durchgang_gesamt": "[Holz Satz $, 1]"
 		},
 	"bahn1" :
 		{

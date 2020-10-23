@@ -1,20 +1,21 @@
-function loadMannschaftData(teamSize, setCount) {
+function loadMannschaftData(requestURL, teamSize, setCount, displaySP) {
   try {
-    var requestURL = "mannschaft.json";
     var request = new XMLHttpRequest();
     request.open('GET', requestURL);
-    request.responseType = 'json';
-    request.onload = writeMannschaft.bind(null, request, teamSize, setCount);
+    request.responseType = 'arraybuffer';
+    request.onload = writeMannschaft.bind(null, request, teamSize,
+      setCount, displaySP);
     request.send();
   } catch (ex) {
     console.error("loadMannschaftData", ex.message);
   }
 }
 
-function writeMannschaft(request, teamSize, setCount) {
+function writeMannschaft(request, teamSize, setCount, displaySP) {
   try {
-    var data = request.response;
-    var mannschaft = data.mannschaft[0];
+    var decoder = new TextDecoder("windows-1252");
+    var data = JSON.parse(decoder.decode(request.response));
+    var mannschaft = data.mannschaft0;
     var el = document.getElementById("mannschaft0");
     el.innerHTML = mannschaft.name;
     el = document.getElementById("gesamt0");
@@ -27,25 +28,29 @@ function writeMannschaft(request, teamSize, setCount) {
     el.innerHTML = mannschaft.gesamt;
     el = el.parentElement.nextElementSibling.firstChild;
     el.innerHTML = mannschaft.mp;
-    var i;
-    for (i = 0; i < teamSize; i++) {
-      var spieler = mannschaft.spieler[i];
+    var spielerArray = [mannschaft.spieler0, mannschaft.spieler1,
+      mannschaft.spieler2, mannschaft.spieler3,
+      mannschaft.spieler4, mannschaft.spieler5];
+    for (var i = 0; i < teamSize; i++) {
+      var spieler = spielerArray[i];
       el = document.getElementById("spieler0" + i.toString());
       el.innerHTML = spieler.spielername;
       el = el.parentElement.nextElementSibling.firstChild;
       el.innerHTML = spieler.wurf;
       el = el.parentElement.nextElementSibling.firstChild;
-      var j;
-      for (j = 0; j < setCount; j++) {
-        el.innerHTML = spieler.satz[j];
+      var satzArray = spieler.satz.split(";")
+      for (var j = 0; j < setCount; j++) {
+        el.innerHTML = satzArray[j];
         el = el.parentElement.nextElementSibling.firstChild;
       }
       el.innerHTML = spieler.gesamt;
-      el = el.parentElement.nextElementSibling.firstChild;
-      el.innerHTML = spieler.sp;
+      if (displaySP) {
+        el = el.parentElement.nextElementSibling.firstChild;
+        el.innerHTML = spieler.sp;
+      }
     }
 
-    mannschaft = data.mannschaft[1];
+    mannschaft = data.mannschaft1;
     el = document.getElementById("mannschaft1");
     el.innerHTML = mannschaft.name;
     el = document.getElementById("gesamt1");
@@ -58,21 +63,26 @@ function writeMannschaft(request, teamSize, setCount) {
     el.innerHTML = mannschaft.gesamt;
     el = el.parentElement.previousElementSibling.firstChild;
     el.innerHTML = mannschaft.mp;
-    for (i = 0; i < teamSize; i++) {
-      var spieler = mannschaft.spieler[i];
+    var spielerArray = [mannschaft.spieler0, mannschaft.spieler1,
+      mannschaft.spieler2, mannschaft.spieler3,
+      mannschaft.spieler4, mannschaft.spieler5];
+    for (var i = 0; i < teamSize; i++) {
+      var spieler = spielerArray[i];
       el = document.getElementById("spieler1" + i.toString());
       el.innerHTML = spieler.spielername;
       el = el.parentElement.previousElementSibling.firstChild;
       el.innerHTML = spieler.wurf;
       el = el.parentElement.previousElementSibling.firstChild;
-      var j;
-      for (j = 0; j < setCount; j++) {
-        el.innerHTML = spieler.satz[j];
+      var satzArray = spieler.satz.split(";")
+      for (var j = 0; j < setCount; j++) {
+        el.innerHTML = satzArray[j];
         el = el.parentElement.previousElementSibling.firstChild;
       }
       el.innerHTML = spieler.gesamt;
-      el = el.parentElement.previousElementSibling.firstChild;
-      el.innerHTML = spieler.sp;
+      if (displaySP) {
+        el = el.parentElement.previousElementSibling.firstChild;
+        el.innerHTML = spieler.sp;
+      }
     }
   } catch (ex) {
     console.error("writeMannschaft", ex.message);

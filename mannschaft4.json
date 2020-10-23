@@ -1,7 +1,7 @@
 {
 	"mannschaft0" :
 		{
-			"name" : "[Mannschaftsname 1]",
+			"name" : "SKC Nibelungen 4",
 			"volle" : "[Volle Mannschaft 1]",
 			"abr" : "[Abraeumer Mannschaft 1]",
 			"f" : "[Fehlwuerfe Mannschaft 1]",
@@ -90,7 +90,7 @@
 				},
 			"spieler3" :
 				{
-					"spielername" : "aasdf� �����",
+					"spielername" : "test",
 					"wurf" : "[Wurf Spieler 2, 4]",
 					"gesamt" : "[Holz Spieler 2, 4]",
 					"sp" : "[Satzpunkte Spieler 2, 4]",

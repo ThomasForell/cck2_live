@@ -3,7 +3,7 @@ function loadBahnData(numLanes) {
     var requestURL = "bahn.json";
     var request = new XMLHttpRequest();
     request.open('GET', requestURL);
-    request.responseType = 'json';
+    request.responseType = 'arraybuffer';
     request.onload = writeBahn.bind(null, request, numLanes);
     request.send();
   } catch (ex) {
@@ -14,8 +14,10 @@ function loadBahnData(numLanes) {
 function writeBahn(request, numLanes) {
   try {
     var laneCnt;
-    var data = request.response;
-    var lane = data.bahn;
+    var decoder = new TextDecoder("windows-1252");
+    var data = JSON.parse(decoder.decode(request.response));
+    var lane = [data.bahn0, data.bahn1, data.bahn2, data.bahn3,
+      data.bahn4, data.bahn5, data.bahn6, data.bahn7];
 
     var el = document.getElementById("name");
     for (laneCnt = 0; laneCnt < numLanes; laneCnt++) {
