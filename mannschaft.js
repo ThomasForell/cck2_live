@@ -1,7 +1,7 @@
 function loadMannschaftData(requestURL, teamSize, setCount, displaySP) {
   try {
     var request = new XMLHttpRequest();
-    request.open('GET', requestURL);
+    request.open('GET', requestURL + '?nocache=' + (new Date()).getTime());
     request.responseType = 'arraybuffer';
     request.onload = writeMannschaft.bind(null, request, teamSize,
       setCount, displaySP);

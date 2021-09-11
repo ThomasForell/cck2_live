@@ -1,7 +1,7 @@
 function loadBahnData(requestURL, firstLane, lastLane) {
   try {
     var request = new XMLHttpRequest();
-    request.open('GET', requestURL);
+    request.open('GET', requestURL + '?nocache=' + (new Date()).getTime());
     request.responseType = 'arraybuffer';
     request.onload = writeBahn.bind(null, request, firstLane, lastLane);
     request.send();
