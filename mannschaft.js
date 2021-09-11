@@ -13,7 +13,7 @@ function loadMannschaftData(requestURL, teamSize, setCount, displaySP) {
 
 function writeMannschaft(request, teamSize, setCount, displaySP) {
   try {
-    var decoder = new TextDecoder("windows-1252");
+    var decoder = new TextDecoder("utf8");
     var data = JSON.parse(decoder.decode(request.response));
     var mannschaft = data.mannschaft0;
     var el = document.getElementById("mannschaft0");

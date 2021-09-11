@@ -13,7 +13,7 @@ function loadBahnData(requestURL, firstLane, lastLane) {
 function writeBahn(request, firstLane, lastLane) {
   try {
     var laneCnt;
-    var decoder = new TextDecoder("windows-1252");
+    var decoder = new TextDecoder("utf8");
     var data = JSON.parse(decoder.decode(request.response));
     var lane = [data.bahn0, data.bahn1, data.bahn2, data.bahn3,
       data.bahn4, data.bahn5, data.bahn6, data.bahn7];
