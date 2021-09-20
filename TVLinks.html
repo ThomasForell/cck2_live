@@ -6,69 +6,52 @@
 </head>
 <style type="text/css">
 body {overflow:hidden; /* Hide scrollbars */}
-.block-num {width:75px;max-width:75px}
-.block-cap {width:370px;max-width:370px}
+.block-num {width:80px;max-width:80px;text-align-last:center;}
+.block-num-large {width:210px;max-width:210px;text-align-last:center;}
+.block-cap {width:420px;max-width:420px}
 .tg    {border-collapse:collapse;border-spacing:0;table-layout:fixed;}
-.tg td {font-family:Geneva, sans-serif;font-size:34px;font-weight:bold;padding:2px 2px;border-style:solid;border-width:3px;overflow:hidden;word-break:normal;border-color:#cccccc}
-.tg th {font-family:Geneva, sans-serif;font-size:34px;font-weight:bold;padding:2px 2px;border-style:solid;border-width:3px;overflow:hidden;word-break:normal;border-color:#cccccc}
+.tg td {font-family:Geneva, sans-serif;font-size:40px;padding:2px 2px;border-style:solid;border-width:3px;overflow:hidden;word-break:normal;border-color:#cccccc}
+.tg th {font-family:Geneva, sans-serif;font-size:40px;padding:2px 2px;border-style:solid;border-width:3px;overflow:hidden;word-break:normal;border-color:#cccccc}
 .tg .logo          {background-color:#ffffff;text-align:center;white-space:nowrap}
-.tg .data          {background-color:#ffffff;                  width:40px;overflow:hidden;text-overflow:clip;white-space:nowrap}
-.tg .data-num      {background-color:#ffffff;text-align:center;width:40px;overflow:hidden;text-overflow:clip;white-space:nowrap}
-.tg .data-right    {background-color:#ffffff;text-align:right; width:40px;overflow:hidden;text-overflow:clip;white-space:nowrap}
-.tg .label         {background-color:#cccccc;                  width:40px;overflow:hidden;text-overflow:clip;white-space:nowrap}
-.tg .label-num     {background-color:#cccccc;text-align:center;width:40px;overflow:hidden;text-overflow:clip;white-space:nowrap}
-.tg .label-right   {background-color:#cccccc;text-align:right; width:40px;overflow:hidden;text-overflow:clip;white-space:nowrap}
+.tg .data-num      {background-color:#ffffff;text-align:center;overflow:hidden;text-overflow:clip;white-space:nowrap}
+.tg .data-right    {background-color:#ffffff;text-align:right;overflow:hidden;text-overflow:clip;white-space:nowrap}
+.tg .label         {background-color:#cccccc;text-align:left;overflow:hidden;text-overflow:clip;white-space:nowrap}
+.tg .label-num     {background-color:#cccccc;text-align:center;overflow:hidden;text-overflow:clip;white-space:nowrap}
+.tg .label-right   {background-color:#cccccc;text-align:right;overflow:hidden;text-overflow:clip;white-space:nowrap}
 .tg .free          {border-top-style:hidden;border-bottom-style:hidden;width:100%}
-.tg .no-border-top {border-top-style:hidden;border-left-style:hidden;border-right-style:hidden;background-color:#ffffff;white-space:nowrap;text-align:center}
-.tg .no-border-bot {border-bottom-style:hidden;border-left-style:hidden;border-right-style:hidden;background-color:#ffffff;white-space:nowrap;text-align:center}
+.tg .no-border-top {border-top-style:hidden;border-left-style:hidden;border-right-style:hidden;background-color:#ffffff;text-align:center;vertical-align:bottom;font-size:45px;font-weight:bolder}
+.tg .no-border-pic {border-top-style:hidden;border-left-style:hidden;border-right-style:hidden;background-color:#ffffff}
+.tg .no-border-bot {border-bottom-style:hidden;border-left-style:hidden;border-right-style:hidden;background-color:#ffffff;text-align:center}
 .center { display: block; margin-left: auto; margin-right: auto }
 </style>
 <table class="tg">
   <tr>
-    <td class="no-border-top" colspan="5" height="175px"></td>
+    <td class="no-border-top" colspan="2" height="75px"></td>
     <td class="free" rowspan="6"><img src="nbc-cup-teams-logo.jpg" alt="Advertize" height="650px" width="auto" class="center"/></td>
-    <td class="no-border-top" colspan="5"></td>
+    <td class="no-border-top" colspan="2"></td>
   </tr>
   <tr>
-    <td class="no-border-top" colspan="5" id="mannschaft0"></td>
-    <td class="no-border-top" colspan="5" id="mannschaft1" align="right"></td>
+    <td class="no-border-top" colspan="2"><div id="mannschaft0" class="block-cap"></div></td>
+    <td class="no-border-top" colspan="2"><div id="mannschaft1" class="block-cap"></div></td>
   </tr>
   <tr>
-    <td class="no-border-top" colspan="5" height="220px"><img src="Heim.png" alt="Logo Heimmannschaft" height="175px" width="auto" class="center"/></td>
-    <td class="no-border-top" colspan="5"><img src="Gast.png" alt="Logo Gastmannschaft" height="175px" width="auto" class="center"/></td>
+    <td class="no-border-pic" colspan="2" height="300px"><img src="Heim.png" alt="Logo Heimmannschaft" height="250px" width="auto" class="center"/></td>
+    <td class="no-border-pic" colspan="2"><img id="gastimg" src="Gast.png" alt="Logo Gastmannschaft" height="250px" width="auto" class="center"/></td>
   </tr>  
   <tr>
-    <td class="label-num">Volle</td>
-    <td class="label-num">Abr</td>
-    <td class="label-num">F</td>
-    <td class="label-num">Ges</td>
+    <td class="label-num" id="test">Ges</td>
     <td class="label-num">MP</td>
     <td class="label-num">MP</td>
     <td class="label-num">Ges</td>
-    <td class="label-num">F</td>
-    <td class="label-num">Abr</td>
-    <td class="label-num">Volle</td>
   </tr>
   <tr>
-    <td class="data-num"><div class="block-num" id="gesamt0"></div></td>
-    <td class="data-num"><div class="block-num"></div></td>
-    <td class="data-num"><div class="block-num"></div></td>
-    <td class="data-num"><div class="block-num"></div></td>
-    <td class="data-num"><div class="block-num"></div></td>
-    <td class="data-num"><div class="block-num"></div></td>
-    <td class="data-num"><div class="block-num"></div></td>
-    <td class="data-num"><div class="block-num"></div></td>
-    <td class="data-num"><div class="block-num"></div></td>
-    <td class="data-num"><div class="block-num" id="gesamt1"></div></td>
+    <td class="data-num"><div class="block-num-large" id="gesamt0"></div></td>
+    <td class="data-num"><div class="block-num-large"></div></td>
+    <td class="data-num"><div class="block-num-large"></div></td>
+    <td class="data-num"><div class="block-num-large" id="gesamt1"></div></td>
   </tr>
   <tr>
-    <td class="no-border-bot" height="175px"></td>
-    <td class="no-border-bot"></td>
-    <td class="no-border-bot"></td>
-    <td class="no-border-bot"></td>
-    <td class="no-border-bot"></td>
-    <td class="no-border-bot"></td>
-    <td class="no-border-bot"></td>
+    <td class="no-border-bot" height="75px"></td>
     <td class="no-border-bot"></td>
     <td class="no-border-bot"></td>
     <td class="no-border-bot"></td>
@@ -77,7 +60,6 @@ body {overflow:hidden; /* Hide scrollbars */}
 <table class="tg">
   <tr>
     <td class="label">Name</td>
-    <td class="label-num"><div class="block-num">Wurf</div></td>
     <td class="label-num"><div class="block-num">1</div></td>
     <td class="label-num"><div class="block-num">2</div></td>
     <td class="label-num"><div class="block-num">3</div></td>
@@ -90,13 +72,10 @@ body {overflow:hidden; /* Hide scrollbars */}
     <td class="label-num"><div class="block-num">3</div></td>
     <td class="label-num"><div class="block-num">2</div></td>
     <td class="label-num"><div class="block-num">1</div></td>
-    <td class="label-num"><div class="block-num">Wurf</div></td>
     <td class="label-right">Name</td>
   </tr>
   <tr>
     <td class="data"><div class="block-cap" id="spieler00"></div></td>
-    <td class="data-num"><div class="block-num"></div></td>
-    <td class="data-num"><div class="block-num"></div></td>
     <td class="data-num"><div class="block-num"></div></td>
     <td class="data-num"><div class="block-num"></div></td>
     <td class="data-num"><div class="block-num"></div></td>
@@ -125,14 +104,10 @@ body {overflow:hidden; /* Hide scrollbars */}
     <td class="data-num"><div class="block-num"></div></td>
     <td class="data-num"><div class="block-num"></div></td>
     <td class="data-num"><div class="block-num"></div></td>
-    <td class="data-num"><div class="block-num"></div></td>
-    <td class="data-num"><div class="block-num"></div></td>
     <td class="data-right"><div class="block-cap" id="spieler11"></div></td>
   </tr>
   <tr>
     <td class="data"><div class="block-cap" id="spieler02"></div></td>
-    <td class="data-num"><div class="block-num"></div></td>
-    <td class="data-num"><div class="block-num"></div></td>
     <td class="data-num"><div class="block-num"></div></td>
     <td class="data-num"><div class="block-num"></div></td>
     <td class="data-num"><div class="block-num"></div></td>
@@ -161,14 +136,10 @@ body {overflow:hidden; /* Hide scrollbars */}
     <td class="data-num"><div class="block-num"></div></td>
     <td class="data-num"><div class="block-num"></div></td>
     <td class="data-num"><div class="block-num"></div></td>
-    <td class="data-num"><div class="block-num"></div></td>
-    <td class="data-num"><div class="block-num"></div></td>
     <td class="data-right"><div class="block-cap" id="spieler13"></div></td>
   </tr>
   <tr>
     <td class="data"><div class="block-cap" id="spieler04"></div></td>
-    <td class="data-num"><div class="block-num"></div></td>
-    <td class="data-num"><div class="block-num"></div></td>
     <td class="data-num"><div class="block-num"></div></td>
     <td class="data-num"><div class="block-num"></div></td>
     <td class="data-num"><div class="block-num"></div></td>
@@ -197,13 +168,28 @@ body {overflow:hidden; /* Hide scrollbars */}
     <td class="data-num"><div class="block-num"></div></td>
     <td class="data-num"><div class="block-num"></div></td>
     <td class="data-num"><div class="block-num"></div></td>
-    <td class="data-num"><div class="block-num"></div></td>
-    <td class="data-num"><div class="block-num"></div></td>
     <td class="data-right"><div class="block-cap" id="spieler15"></div></td>
   </tr>
 </table>
 <script src="mannschaft.js"></script>
 <script>
-  setInterval(loadMannschaftData, 1000, "mannschaft1.json", 6, 4, true);
+  
+  var stateModule = (function () {
+        var state = 0; // Private Variable
+        var pub = {};// public object - returned at end of module
+
+        pub.changeState = function (newstate) {
+            state = newstate;
+        };
+
+        pub.getState = function() {
+            return state;
+        }
+
+        return pub; // expose externally
+    }());
+
+  setInterval(tvslider, 1000, stateModule); 
+//  setInterval(loadMannschaftData, 1000, "mannschaft1.json", 6, 4, true, true); // player, sets, show sp, reduced
 </script>
 </html>

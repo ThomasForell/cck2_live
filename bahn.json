@@ -1,8 +1,8 @@
 {
 	"bahn0" :
 		{
-			"mannschaft" : "ä-ö-ü-ß-Ä-Ö-Ü",
-			"spielername" : "Roßdorf",
+			"mannschaft" : "test",
+			"spielername" : "RoÃŸdorf",
 			"sp": "0,5",
 			"wurf" : "101",
 			"gesamt" : "589",
