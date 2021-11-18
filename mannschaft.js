@@ -1,4 +1,31 @@
 
+function showMannschaft(mannschaftNo, reducedOutput) {
+  try {
+    var requestURL = "config" + mannschaftNo.toString() + ".json?" + Date.now().toString();
+    var request = new XMLHttpRequest();
+    request.open('GET', requestURL);
+    request.responseType = 'arraybuffer';
+    request.onload = loadConfig.bind(null, request, reducedOutput);
+    request.send();
+  } catch (ex) {
+    console.error("showMannschaft", ex.message);
+  }
+}
+
+function loadConfig(request, reducedOutput) {
+  var decoder = new TextDecoder("utf8");
+  var config = JSON.parse(decoder.decode(request.response));
+  loadBilder(config.bild_heim, config.bild_gast);
+  loadMannschaftData(config.token_datei, config.anzahl_spieler, config.anzahl_saetze, config.satzpunkte_anzeigen == "ja", reducedOutput)
+}
+
+function loadBilder(imgHome, imgGuest) {
+  var imgReplace = document.getElementById("img_home")
+  imgReplace.src = imgHome + "?" + Date.now().toString();
+  imgReplace = document.getElementById("img_guest")
+  imgReplace.src = imgGuest + "?" + Date.now().toString();
+}
+
 function tvslider(counterState) {
   counterState.changeState(counterState.getState() + 1);
   if (counterState.getState() >= 5) {
@@ -22,7 +49,7 @@ function tvslider(counterState) {
 function loadMannschaftData(requestURL, teamSize, setCount, displaySP, reducedOutput) {
   try {
     var request = new XMLHttpRequest();
-    request.open('GET', requestURL);
+    request.open('GET', requestURL + "?" + Date.now().toString());
     request.responseType = 'arraybuffer';
     request.onload = writeMannschaft.bind(null, request, teamSize,
       setCount, displaySP, reducedOutput);

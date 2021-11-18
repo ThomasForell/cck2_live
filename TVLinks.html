@@ -27,7 +27,7 @@ body {overflow:hidden; /* Hide scrollbars */}
 <table class="tg">
   <tr>
     <td class="no-border-top" colspan="2" height="75px"></td>
-    <td class="free" rowspan="6"><img src="nbc-cup-teams-logo.jpg" alt="Advertize" height="650px" width="auto" class="center"/></td>
+    <td class="free" rowspan="6"><img src="kc-lorsch.png" alt="Advertize" height="650px" width="auto" class="center" id="img_center"/></td>
     <td class="no-border-top" colspan="2"></td>
   </tr>
   <tr>
@@ -35,8 +35,8 @@ body {overflow:hidden; /* Hide scrollbars */}
     <td class="no-border-top" colspan="2"><div id="mannschaft1" class="block-cap"></div></td>
   </tr>
   <tr>
-    <td class="no-border-pic" colspan="2" height="300px"><img src="Heim.png" alt="Logo Heimmannschaft" height="250px" width="auto" class="center"/></td>
-    <td class="no-border-pic" colspan="2"><img id="gastimg" src="Gast.png" alt="Logo Gastmannschaft" height="250px" width="auto" class="center"/></td>
+    <td class="no-border-pic" colspan="2" height="300px"><img src="Heim.png" alt="Logo Heimmannschaft" height="250px" width="auto" class="center" id="img_home"/></td>
+    <td class="no-border-pic" colspan="2"><img src="Gast.png" alt="Logo Gastmannschaft" height="250px" width="auto" class="center" id="img_guest"/></td>
   </tr>  
   <tr>
     <td class="label-num" id="test">Ges</td>
@@ -173,23 +173,23 @@ body {overflow:hidden; /* Hide scrollbars */}
 </table>
 <script src="mannschaft.js"></script>
 <script>
-  
-  var stateModule = (function () {
-        var state = 0; // Private Variable
-        var pub = {};// public object - returned at end of module
-
-        pub.changeState = function (newstate) {
-            state = newstate;
-        };
-
-        pub.getState = function() {
-            return state;
-        }
-
-        return pub; // expose externally
-    }());
-
-  setInterval(tvslider, 1000, stateModule); 
+//  var stateModule = (function () {
+//        var state = 0; // Private Variable
+//        var pub = {};// public object - returned at end of module
+//
+//        pub.changeState = function (newstate) {
+//            state = newstate;
+//        };
+//
+//        pub.getState = function() {
+//            return state;
+//        }
+//
+//        return pub; // expose externally
+//    }());
+//
+//  setInterval(tvslider, 1000, stateModule); 
 //  setInterval(loadMannschaftData, 1000, "mannschaft1.json", 6, 4, true, true); // player, sets, show sp, reduced
+  setInterval(showMannschaft, 1000, 1, true); 
 </script>
 </html>
