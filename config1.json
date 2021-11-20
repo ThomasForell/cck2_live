@@ -1,8 +1,0 @@
-{
-    "bild_heim": "Heim.png",
-    "bild_gast": "Gast2.png",
-    "anzahl_spieler": 6,
-    "anzahl_saetze": 4,
-    "token_datei": "mannschaft1.json",
-    "satzpunkte_anzeigen": "ja"
-}

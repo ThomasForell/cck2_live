@@ -1,0 +1,52 @@
+[
+    {
+        "bild_heim": "Heim.png",
+        "bild_gast": "Gast1.png",
+        "anzahl_spieler": 6,
+        "anzahl_saetze": 4,
+        "token_datei": "mannschaft1.json",
+        "satzpunkte_anzeigen": "ja",
+        "anzeigedauer_s": 3,
+        "reduzierte_ausgabe": "ja"
+    },
+    {
+        "bild_heim": "Heim.png",
+        "bild_gast": "Gast2.png",
+        "anzahl_spieler": 6,
+        "anzahl_saetze": 4,
+        "token_datei": "mannschaft2.json",
+        "satzpunkte_anzeigen": "ja",
+        "anzeigedauer_s": 3,
+        "reduzierte_ausgabe": "ja"
+    },   
+    {
+        "bild_heim": "Heim.png",
+        "bild_gast": "Gast3.png",
+        "anzahl_spieler": 6,
+        "anzahl_saetze": 4,
+        "token_datei": "mannschaft3.json",
+        "satzpunkte_anzeigen": "ja",
+        "anzeigedauer_s": 0,
+        "reduzierte_ausgabe": "ja"
+    },
+    {
+        "bild_heim": "Heim.png",
+        "bild_gast": "Gast4.png",
+        "anzahl_spieler": 4,
+        "anzahl_saetze": 2,
+        "token_datei": "mannschaft4.json",
+        "satzpunkte_anzeigen": "nein",
+        "anzeigedauer_s": 0,
+        "reduzierte_ausgabe": "ja"
+    },   
+    {
+        "bild_heim": "Heim.png",
+        "bild_gast": "Gast5.png",
+        "anzahl_spieler": 4,
+        "anzahl_saetze": 2,
+        "token_datei": "mannschaft5.json",
+        "satzpunkte_anzeigen": "nein",
+        "anzeigedauer_s": 0,
+        "reduzierte_ausgabe": "ja"
+    }   
+]
