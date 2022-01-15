@@ -16,20 +16,35 @@ function loadConfigAndShow(request, stateModule) {
   var decoder = new TextDecoder("utf8");
   try {  
     var config = JSON.parse(decoder.decode(request.response));
-    var timeCounter = 0;
-    var timeCurrent = stateModule.getState();;
-    for (var i = 0; i < config.length; ++i) {
-      if (timeCurrent >= timeCounter && timeCurrent < timeCounter + config[i].anzeigedauer_s) {
-        loadBilder(config[i].bild_heim, config[i].bild_gast);
-        loadMannschaftData(config[i].token_datei, config[i].anzahl_spieler, config[i].anzahl_saetze, 
-          config[i].satzpunkte_anzeigen == "ja", config[i].reduzierte_ausgabe == "ja")
-      }  
-      timeCounter += config[i].anzeigedauer_s;
+    var config_teams = config.teams;
+    var config_werbung = config.werbung;
+    var time_total_teams = 0;
+    for (var i = 0; i < config_teams.length; ++i) {
+      time_total_teams += config_teams[i].anzeigedauer_s;
     }
+    var timeCurrent = stateModule.getState() % time_total_teams;
+
+    // find team to load
+    var timeCounter = 0;
+    for (var i = 0; i < config_teams.length; ++i) {
+      if (timeCurrent >= timeCounter && timeCurrent < timeCounter + config_teams[i].anzeigedauer_s) {
+        loadBilder(config_teams[i].bild_heim, config_teams[i].bild_gast);
+        loadMannschaftData(config_teams[i].token_datei, config_teams[i].anzahl_spieler, config_teams[i].anzahl_saetze, 
+          config_teams[i].satzpunkte_anzeigen == "ja", config_teams[i].reduzierte_ausgabe == "ja")
+        break;  
+      }  
+      timeCounter += config_teams[i].anzeigedauer_s;
+    }
+
+    // draw advertisments
+    if (config_werbung.bilder.length > 0) {
+      var time_total_werbung = config_werbung.bilder.length * config_werbung.anzeigedauer_s;
+      var werbung_no = Math.floor((stateModule.getState() % time_total_werbung) / config_werbung.anzeigedauer_s);
+      loadWerbung(config_werbung.bilder[werbung_no]);
+    }
+
     // update state
     stateModule.changeState(stateModule.getState() + 1);
-    if (timeCounter < stateModule.getState())
-      stateModule.changeState(0);
   } catch (ex) {
       console.error("loadConfigAndShow", ex.message)
   }
@@ -175,22 +190,7 @@ function writeMannschaft(request, teamSize, setCount, displaySP, reducedOutput) 
   }
 }
 
-function tvslider(counterState) {
-  counterState.changeState(counterState.getState() + 1);
-  if (counterState.getState() >= 5) {
-    if (counterState.getState() == 5) {
-      var imgReplace = document.getElementById("gastimg");
-      imgReplace.src = "Gast2.png";
-    }
-    loadMannschaftData("mannschaft2.json", 6, 4, true, true)
-  } else {
-    if (counterState.getState() == 1) {
-      var imgReplace = document.getElementById("gastimg");
-      imgReplace.src = "Gast.png";
-    }
-    loadMannschaftData("mannschaft1.json", 6, 4, true, true)
-  }
-  if (counterState.getState() > 10) {
-    counterState.changeState(0);
-  }
+function loadWerbung(img) {
+  var imgReplace = document.getElementById("img_center")
+  imgReplace.src = img + "?" + Date.now().toString();
 }

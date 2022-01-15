@@ -1,12 +1,18 @@
-[
-    {
-        "bild_heim": "Heim.png",
-        "bild_gast": "Gast1.png",
-        "anzahl_spieler": 6,
-        "anzahl_saetze": 4,
-        "token_datei": "mannschaft1.json",
-        "satzpunkte_anzeigen": "ja",
-        "anzeigedauer_s": 1,
-        "reduzierte_ausgabe": "nein"
-    }
-]
+{ 
+    "teams": [
+        {
+            "bild_heim": "Heim.png",
+            "bild_gast": "Gast1.png",
+            "anzahl_spieler": 6,
+            "anzahl_saetze": 4,
+            "token_datei": "mannschaft1.json",
+            "satzpunkte_anzeigen": "ja",
+            "anzeigedauer_s": 1,
+            "reduzierte_ausgabe": "nein"
+        }
+    ],
+    "werbung": {
+        "anzeigedauer_s": 5,
+        "bilder": []
+    }    
+}
