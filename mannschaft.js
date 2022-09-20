@@ -76,7 +76,11 @@ function writeMannschaft(request, teamSize, setCount, displaySP, reducedOutput) 
     var data = JSON.parse(decoder.decode(request.response));
     var mannschaft = data.mannschaft0;
     var el = document.getElementById("mannschaft0");
-    el.innerHTML = mannschaft.name;
+    var gesamt_diff = data.mannschaft0.gesamt - data.mannschaft1.gesamt;
+    if (gesamt_diff > 0)
+      el.innerHTML = mannschaft.name + " (+" + gesamt_diff + ")";
+    else
+      el.innerHTML = mannschaft.name;
     el = document.getElementById("gesamt0");
     if (!reducedOutput)
     {
@@ -93,7 +97,14 @@ function writeMannschaft(request, teamSize, setCount, displaySP, reducedOutput) 
       el.innerHTML = mannschaft.mp;
     else
       el.innerHTML = "";
-     
+
+    if (displaySP) {
+      el = document.getElementById("mp_center");
+      if (el != null) {
+        el.innerHTML = data.mannschaft0.mp + " : " + data.mannschaft1.mp
+      }
+    }
+
     var spielerArray = [mannschaft.spieler0, mannschaft.spieler1,
     mannschaft.spieler2, mannschaft.spieler3,
     mannschaft.spieler4, mannschaft.spieler5];
@@ -127,7 +138,10 @@ function writeMannschaft(request, teamSize, setCount, displaySP, reducedOutput) 
 
     mannschaft = data.mannschaft1;
     el = document.getElementById("mannschaft1");
-    el.innerHTML = mannschaft.name;
+    if (gesamt_diff < 0)
+      el.innerHTML = "(+" + gesamt_diff + ") " + mannschaft.name;
+    else
+      el.innerHTML = mannschaft.name;
     el = document.getElementById("gesamt1");
     if (!reducedOutput)
     {
