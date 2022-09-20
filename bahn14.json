@@ -1,82 +1,74 @@
-{
-	"bahn0" :
-		{
-			"mannschaft" : "SKC Nibelungen Lorsch 4",
-			"spielername" : "Thomas Forell",
-			"sp": "0,5",
-			"wurf" : "101",
-			"gesamt" : "589",
-			"durchgang_wurf" : "11",
-			"durchgang_gesamt": "71"
-		},
-	"bahn1" :
-		{
-			"mannschaft" : "[Mannschaftsname Bahn 2]",
-			"spielername" : "[SpielernameAw Bahn 2]",
-			"sp": "[Satzpunkte Spieler Bahn 2]",
-			"wurf" : "[Wurf Spieler Bahn 2]",
-			"gesamt" : "[Holz Spieler Bahn 2]",
-			"durchgang_wurf" : "[Wurf Satz $, 2]",
-			"durchgang_gesamt": "[Holz Satz $, 2]"
-		},
-	"bahn2" :
-		{
-			"mannschaft" : "[Mannschaftsname Bahn 3]",
-			"spielername" : "[SpielernameAw Bahn 3]",
-			"sp": "[Satzpunkte Spieler Bahn 3]",
-			"wurf" : "[Wurf Spieler Bahn 3]",
-			"gesamt" : "[Holz Spieler Bahn 3]",
-			"durchgang_wurf" : "[Wurf Satz $, 3]",
-			"durchgang_gesamt": "[Holz Satz $, 3]"
-		},
-	"bahn3" :
-		{
-			"mannschaft" : "[Mannschaftsname Bahn 4]",
-			"spielername" : "[SpielernameAw Bahn 4]",
-			"sp": "[Satzpunkte Spieler Bahn 4]",
-			"wurf" : "[Wurf Spieler Bahn 4]",
-			"gesamt" : "[Holz Spieler Bahn 4]",
-			"durchgang_wurf" : "[Wurf Satz $, 4]",
-			"durchgang_gesamt": "[Holz Satz $, 4]"
-		},
-	"bahn4" :
-		{
-			"mannschaft" : "[Mannschaftsname Bahn 5]",
-			"spielername" : "[SpielernameAw Bahn 5]",
-			"sp": "[Satzpunkte Spieler Bahn 5]",
-			"wurf" : "[Wurf Spieler Bahn 5]",
-			"gesamt" : "[Holz Spieler Bahn 5]",
-			"durchgang_wurf" : "[Wurf Satz $, 5]",
-			"durchgang_gesamt": "[Holz Satz $, 5]"
-		},
-	"bahn5" :
-		{
-			"mannschaft" : "[Mannschaftsname Bahn 6]",
-			"spielername" : "[SpielernameAw Bahn 6]",
-			"sp": "[Satzpunkte Spieler Bahn 6]",
-			"wurf" : "[Wurf Spieler Bahn 6]",
-			"gesamt" : "[Holz Spieler Bahn 6]",
-			"durchgang_wurf" : "[Wurf Satz $, 6]",
-			"durchgang_gesamt": "[Holz Satz $, 6]"
-		},
-	"bahn6" :
-		{
-			"mannschaft" : "[Mannschaftsname Bahn 7]",
-			"spielername" : "[SpielernameAw Bahn 7]",
-			"sp": "[Satzpunkte Spieler Bahn 7]",
-			"wurf" : "[Wurf Spieler Bahn 7]",
-			"gesamt" : "[Holz Spieler Bahn 7]",
-			"durchgang_wurf" : "[Wurf Satz $, 7]",
-			"durchgang_gesamt": "[Holz Satz $, 7]"
-		},
-	"bahn7" :
-		{
-			"mannschaft" : "[Mannschaftsname Bahn 8]",
-			"spielername" : "[SpielernameAw Bahn 8]",
-			"sp": "[Satzpunkte Spieler Bahn 8]",
-			"wurf" : "[Wurf Spieler Bahn 8]",
-			"gesamt" : "[Holz Spieler Bahn 8]",
-			"durchgang_wurf" : "[Wurf Satz $, 8]",
-			"durchgang_gesamt": "[Holz Satz $, 8]"
-		}
+﻿{
+    "bahn0": {
+        "mannschaft": "KV Aschaffenburg",
+        "spielername": "Pascal Rüttiger",
+        "sp": "0",
+        "wurf": "0",
+        "gesamt": "0",
+        "durchgang_wurf": "0",
+        "durchgang_gesamt": "0"
+    },
+    "bahn1": {
+        "mannschaft": "SKV Lorsch",
+        "spielername": "Jason Straub",
+        "sp": "0",
+        "wurf": "0",
+        "gesamt": "0",
+        "durchgang_wurf": "0",
+        "durchgang_gesamt": "0"
+    },
+    "bahn2": {
+        "mannschaft": "KC Rothenbergen",
+        "spielername": "Marcel Scholz",
+        "sp": "0",
+        "wurf": "0",
+        "gesamt": "0",
+        "durchgang_wurf": "0",
+        "durchgang_gesamt": "0"
+    },
+    "bahn3": {
+        "mannschaft": "KV Aschaffenburg",
+        "spielername": "Leon Mumincehajic",
+        "sp": "0",
+        "wurf": "0",
+        "gesamt": "0",
+        "durchgang_wurf": "0",
+        "durchgang_gesamt": "0"
+    },
+    "bahn4": {
+        "mannschaft": "",
+        "spielername": "",
+        "sp": "",
+        "wurf": "",
+        "gesamt": "",
+        "durchgang_wurf": "",
+        "durchgang_gesamt": ""
+    },
+    "bahn5": {
+        "mannschaft": "",
+        "spielername": "",
+        "sp": "",
+        "wurf": "",
+        "gesamt": "",
+        "durchgang_wurf": "",
+        "durchgang_gesamt": ""
+    },
+    "bahn6": {
+        "mannschaft": "",
+        "spielername": "",
+        "sp": "",
+        "wurf": "",
+        "gesamt": "",
+        "durchgang_wurf": "",
+        "durchgang_gesamt": ""
+    },
+    "bahn7": {
+        "mannschaft": "",
+        "spielername": "",
+        "sp": "",
+        "wurf": "",
+        "gesamt": "",
+        "durchgang_wurf": "",
+        "durchgang_gesamt": ""
+    }
 }
