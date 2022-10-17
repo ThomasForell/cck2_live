@@ -77,7 +77,7 @@ function writeMannschaft(request, teamSize, setCount, displaySP, reducedOutput) 
     var mannschaft = data.mannschaft0;
     var el = document.getElementById("mannschaft0");
     var gesamt_diff = data.mannschaft0.gesamt - data.mannschaft1.gesamt;
-    if (gesamt_diff > 0)
+    if (gesamt_diff >= 0)
       el.innerHTML = mannschaft.name + " (+" + gesamt_diff + ")";
     else
       el.innerHTML = mannschaft.name;
@@ -138,8 +138,8 @@ function writeMannschaft(request, teamSize, setCount, displaySP, reducedOutput) 
 
     mannschaft = data.mannschaft1;
     el = document.getElementById("mannschaft1");
-    if (gesamt_diff < 0)
-      el.innerHTML = "(+" + gesamt_diff + ") " + mannschaft.name;
+    if (gesamt_diff <= 0)
+      el.innerHTML = "(+" + (-gesamt_diff) + ") " + mannschaft.name;
     else
       el.innerHTML = mannschaft.name;
     el = document.getElementById("gesamt1");
