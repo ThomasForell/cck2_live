@@ -1,0 +1,22 @@
+# Visual Studio Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/*.code-snippets
+
+# Local History for Visual Studio Code
+.history/
+
+# Built Visual Studio Code Extensions
+*.vsix
+
+# Ignore local configuration files
+*.json
+
+# Ignore python virtual environment
+.venv/*
+
+# Token files for CCK2
+!tokens_*.json
