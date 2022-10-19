@@ -1,11 +1,11 @@
 { 
     "teams": [
         {
-            "bild_heim": "Heim.png",
-            "bild_gast": "Gast1.png",
+            "bild_heim": "Logos/SKC_Nibelungen_Lorsch.png",
+            "bild_gast": "Logos/TV_Eibach.png",
             "anzahl_spieler": 6,
             "anzahl_saetze": 4,
-            "token_datei": "mannschaft1.json",
+            "token_datei": "mannschaft2.json",
             "satzpunkte_anzeigen": "ja",
             "anzeigedauer_s": 1,
             "reduzierte_ausgabe": "nein"

@@ -1,28 +1,28 @@
 { 
     "teams": [
         {
-            "bild_heim": "Heim.png",
-            "bild_gast": "Gast1.png",
+            "bild_heim": "Logos/SKC_Nibelungen_Lorsch.png",
+            "bild_gast": "Logos/TV_Eibach.png",
             "anzahl_spieler": 6,
             "anzahl_saetze": 4,
             "token_datei": "mannschaft1.json",
             "satzpunkte_anzeigen": "ja",
-            "anzeigedauer_s": 20,
+            "anzeigedauer_s": 5,
             "reduzierte_ausgabe": "ja"
         },
         {
-            "bild_heim": "Heim.png",
-            "bild_gast": "Gast2.png",
+            "bild_heim": "Logos/SKC_Nibelungen_Lorsch.png",
+            "bild_gast": "Logos/SG_Hainhausen.png",
             "anzahl_spieler": 6,
             "anzahl_saetze": 4,
             "token_datei": "mannschaft2.json",
             "satzpunkte_anzeigen": "ja",
-            "anzeigedauer_s": 20,
+            "anzeigedauer_s": 5,
             "reduzierte_ausgabe": "ja"
         },   
         {
-            "bild_heim": "Heim.png",
-            "bild_gast": "Gast3.png",
+            "bild_heim": "Logos/SKC_Nibelungen_Lorsch.png",
+            "bild_gast": "Gast3.jpg",
             "anzahl_spieler": 6,
             "anzahl_saetze": 4,
             "token_datei": "mannschaft3.json",
@@ -31,7 +31,7 @@
             "reduzierte_ausgabe": "ja"
         },
         {
-            "bild_heim": "Heim.png",
+            "bild_heim": "Logos/SKC_Nibelungen_Lorsch.png",
             "bild_gast": "Gast4.png",
             "anzahl_spieler": 4,
             "anzahl_saetze": 2,
@@ -41,7 +41,7 @@
             "reduzierte_ausgabe": "ja"
         },   
         {
-            "bild_heim": "Heim.png",
+            "bild_heim": "Logos/SKC_Nibelungen_Lorsch.png",
             "bild_gast": "Gast5.png",
             "anzahl_spieler": 4,
             "anzahl_saetze": 2,
@@ -54,9 +54,14 @@
     "werbung": {
         "anzeigedauer_s": 20,
         "bilder": [
-            "werbung_einzel.png",
-            "werbung_team.png",
-            "werbung_team100.png"
+            "Werbung/rekorde_einzel_120.png",
+			"Werbung/sparkasse.png",
+            "Werbung/rekorde_team_120.png",
+			"Werbung/kempa.png",
+            "Werbung/rekorde_team_100.png",
+			"Werbung/dvag.png",
+			"Werbung/kc-lorsch.png",
+			"Werbung/rekorde_team_mixed_100.png"
         ]
     }    
 }
