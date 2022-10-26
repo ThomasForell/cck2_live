@@ -20,3 +20,6 @@
 
 # Token files for CCK2
 !tokens_*.json
+
+# For testing
+Werbung/test.png
