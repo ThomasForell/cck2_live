@@ -31,8 +31,8 @@ function loadConfigAndShow(request, stateModule, reducedOutput, showLanes) {
         loadBilder(config_teams[i].bild_heim, config_teams[i].bild_gast);
         loadMannschaftData(config_teams[i].token_datei, config_teams[i].anzahl_spieler, config_teams[i].anzahl_saetze, 
           config_teams[i].satzpunkte_anzeigen == "ja", reducedOutput)
-        if (config_teams.token_bahn != "" && showLanes) {
-          loadLaneData(config_teams[i].token_bahn, config_teams[i].anzahl_bahnen);
+        if (config_teams[i].token_bahn != "" && showLanes) {
+          loadLaneData(config_teams[i].token_bahn, config_teams[i].anzahl_bahnen, config_teams[i].satzpunkte_anzeigen == "ja");
         }      
         break;  
       }  
@@ -226,19 +226,19 @@ function loadWerbung(img) {
   }
 }
 
-function loadLaneData(requestURL, numLanes) {
+function loadLaneData(requestURL, numLanes, showSetPoints) {
   try {
     var request = new XMLHttpRequest();
     request.open('GET', requestURL + "?" +  Date.now().toString());
     request.responseType = 'arraybuffer';
-    request.onload = writeBahn.bind(null, request, numLanes);
+    request.onload = writeLane.bind(null, request, numLanes, showSetPoints);
     request.send();
   } catch (ex) {
     console.error("loadBahnData", ex.message);
   }
 }
 
-function writeBahn(request, numLanes) {
+function writeLane(request, numLanes, showSetPoints) {
   try {
     var laneCnt;
     var decoder = new TextDecoder("utf8");
@@ -248,8 +248,11 @@ function writeBahn(request, numLanes) {
 
     var el = document.getElementById("name");
     for (laneCnt = 0; laneCnt < numLanes; laneCnt++) {
-      el.innerHTML = lane[laneCnt].spielername + " ("
-        + lane[laneCnt].sp + ")";
+      var spieler = lane[laneCnt].spielername;
+      if (showSetPoints) {
+        spieler += " (" + lane[laneCnt].sp + ")";
+      }
+      el.innerHTML = spieler;
       if (laneCnt < numLanes -1) {
         el = el.parentElement.nextElementSibling.nextElementSibling.firstChild;
       }
