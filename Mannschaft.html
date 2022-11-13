@@ -6,6 +6,18 @@
 </head>
 <style type="text/css">
 body {overflow:hidden; /* Hide scrollbars */}
+
+.result-block-num{width:60px;max-width:60px}
+.result-block-cap{width:250px;max-width:250px}
+.result-tg  {border-collapse:collapse;border-spacing:0;table-layout:fixed;}
+.result-tg td{font-family:Geneva, sans-serif;font-size:20px;font-weight:bold;padding:2px 2px;border-style:solid;border-width:3px;overflow:hidden;word-break:normal;border-color:#cccccc}
+.result-tg th{font-family:Geneva, sans-serif;font-size:20px;font-weight:bold;padding:2px 2px;border-style:solid;border-width:3px;overflow:hidden;word-break:normal;border-color:#cccccc}
+.result-tg .result-data     {background-color:#ffffff;                  width:40px;overflow:hidden;text-overflow:clip;white-space:nowrap}
+.result-tg .result-data-num {background-color:#ffffff;text-align:center;width:40px;overflow:hidden;text-overflow:clip;white-space:nowrap}
+.result-tg .result-label    {background-color:#cccccc;                  width:40px;overflow:hidden;text-overflow:clip;white-space:nowrap}
+.result-tg .result-label-num{background-color:#cccccc;text-align:center;width:40px;overflow:hidden;text-overflow:clip;white-space:nowrap}
+.result-tg .free{border-top-style:hidden;border-bottom-style:hidden;width:10px}
+
 .block-num{width:50px;max-width:50px}
 .block-cap{width:240px;max-width:240px}
 .block-scr{width:40px;max-width:40px;text-align:right}
@@ -24,9 +36,72 @@ body {overflow:hidden; /* Hide scrollbars */}
 .tg .label   {background-color:#cccccc;                  width:40px;overflow:hidden;text-overflow:clip;white-space:nowrap}
 .tg .label-num{background-color:#cccccc;text-align:center;width:40px;overflow:hidden;text-overflow:clip;white-space:nowrap}
 .tg .label-right{background-color:#cccccc;text-align:right;width:40px;overflow:hidden;text-overflow:clip;white-space:nowrap}
-.tg .free      {border-top-style:hidden;border-bottom-style:hidden;width:50%}
+.tg .free      {border-top-style:hidden;border-bottom-style:hidden;width:12px}
 </style>
-<table class="tg">
+<table class="result-tg" align="center">
+  <tr>
+    <td class="result-data" colspan="4"><div class="result-block-cap" id="name"></div></td>
+    <td class="free"></th>
+    <td class="result-data" colspan="4"><div class="result-block-cap"></div></td>
+    <td class="free"></th>
+    <td class="result-data" colspan="4"><div class="result-block-cap"></div></td>
+    <td class="free"></th>
+    <td class="result-data" colspan="4"><div class="result-block-cap"></div></td>
+  </tr>
+  <tr>
+    <td class="result-data" colspan="4"><div class="result-block-cap" id="team"></div></td>
+    <td class="free"></th>
+    <td class="result-data" colspan="4"><div class="result-block-cap"></div></td>
+    <td class="free"></th>
+    <td class="result-data" colspan="4"><div class="result-block-cap"></div></td>
+    <td class="free"></th>
+    <td class="result-data" colspan="4"><div class="result-block-cap"></div></td>
+  </tr>
+  <tr>
+    <td class="result-label-num"><img src="Wurf_Gesamt.png" alt="Wurf Gesamt" height="20px" width="auto"/></td>
+    <td class="result-data-num"><div class="result-block-num" id="total"></div></td>
+    <td class="result-label-num"><img src="Holz_Gesamt.png" alt="Holz Gesamt" height="20px" width="auto"/></td>
+    <td class="result-data-num"><div class="result-block-num"></div></td>
+    <td class="free"></td>
+    <td class="result-label-num"><img src="Wurf_Gesamt.png" alt="Wurf Gesamt" height="20px" width="auto"/></td>
+    <td class="result-data-num"><div class="result-block-num"></div></td>
+    <td class="result-label-num"><img src="Holz_Gesamt.png" alt="Holz Gesamt" height="20px" width="auto"/></td>
+    <td class="result-data-num"><div class="result-block-num"></div></td>
+    <td class="free"></td>
+    <td class="result-label-num"><img src="Wurf_Gesamt.png" alt="Wurf Gesamt" height="20px" width="auto"/></td>
+    <td class="result-data-num"><div class="result-block-num"></div></td>
+    <td class="result-label-num"><img src="Holz_Gesamt.png" alt="Holz Gesamt" height="20px" width="auto"/></td>
+    <td class="result-data-num"><div class="result-block-num"></div></td>
+    <td class="free"></td>
+    <td class="result-label-num"><img src="Wurf_Gesamt.png" alt="Wurf Gesamt" height="20px" width="auto"/></td>
+    <td class="result-data-num"><div class="result-block-num"></div></td>
+    <td class="result-label-num"><img src="Holz_Gesamt.png" alt="Holz Gesamt" height="20px" width="auto"/></td>
+    <td class="result-data-num"><div class="result-block-num"></div></td>
+  </tr>
+  <tr>
+    <td class="result-label-num"><img src="Wurf_Durchgang.png" alt="Holz Gesamt" height="20px" width="auto"/></td>
+    <td class="result-data-num"><div class="result-block-num" id="heat"></div></td>
+    <td class="result-label-num"><img src="Holz_Durchgang.png" alt="Holz Gesamt" height="20px" width="auto"/></td>
+    <td class="result-data-num"><div class="result-block-num"></div></td>
+    <td class="free"></td>
+    <td class="result-label-num"><img src="Wurf_Durchgang.png" alt="Holz Gesamt" height="20px" width="auto"/></td>
+    <td class="result-data-num"><div class="result-block-num"></div></td>
+    <td class="result-label-num"><img src="Holz_Durchgang.png" alt="Holz Gesamt" height="20px" width="auto"/></td>
+    <td class="result-data-num"><div class="result-block-num"></div></td>
+    <td class="free"></td>
+    <td class="result-label-num"><img src="Wurf_Durchgang.png" alt="Holz Gesamt" height="20px" width="auto"/></td>
+    <td class="result-data-num"><div class="result-block-num"></div></td>
+    <td class="result-label-num"><img src="Holz_Durchgang.png" alt="Holz Gesamt" height="20px" width="auto"/></td>
+    <td class="result-data-num"><div class="result-block-num"></div></td>
+    <td class="free"></td>
+    <td class="result-label-num"><img src="Wurf_Durchgang.png" alt="Holz Gesamt" height="20px" width="auto"/></td>
+    <td class="result-data-num"><div class="result-block-num"></div></td>
+    <td class="result-label-num"><img src="Holz_Durchgang.png" alt="Holz Gesamt" height="20px" width="auto"/></td>
+    <td class="result-data-num"><div class="result-block-num"></div></td>
+  </tr>
+</table>
+<div style="position: fixed; bottom: 5px; width:100%; align-content: center;">
+  <table class="tg">
   <tr>
     <td class="logo" colspan="5" rowspan="6"><img src="Heim.png" alt="Logo Heimmannschaft" height="175px" width="auto" id="img_home"/></td>
 	<td class="free" rowspan="8"></td>
@@ -183,6 +258,7 @@ body {overflow:hidden; /* Hide scrollbars */}
     <td class="data-num"><div class="block-num" id="gesamt1"></div></td>
   </tr>
 </table>
+</div>
 <script src="mannschaft.js"></script>
 <script>
   var stateModule = (function () {
