@@ -1,18 +1,18 @@
 
-function showMannschaft(configSrc, stateModule) {
+function showMannschaft(configSrc, stateModule, reducedOutput) {
   try {
     var requestURL = configSrc + "?" + Date.now().toString();
     var request = new XMLHttpRequest();
     request.open('GET', requestURL);
     request.responseType = 'arraybuffer';
-    request.onload = loadConfigAndShow.bind(null, request, stateModule);
+    request.onload = loadConfigAndShow.bind(null, request, stateModule, reducedOutput);
     request.send();
   } catch (ex) {
     console.error("showMannschaft", ex.message);
   }
 }
 
-function loadConfigAndShow(request, stateModule) {
+function loadConfigAndShow(request, stateModule, reducedOutput) {
   var decoder = new TextDecoder("utf8");
   try {  
     var config = JSON.parse(decoder.decode(request.response));
@@ -30,17 +30,29 @@ function loadConfigAndShow(request, stateModule) {
       if (timeCurrent >= timeCounter && timeCurrent < timeCounter + config_teams[i].anzeigedauer_s) {
         loadBilder(config_teams[i].bild_heim, config_teams[i].bild_gast);
         loadMannschaftData(config_teams[i].token_datei, config_teams[i].anzahl_spieler, config_teams[i].anzahl_saetze, 
-          config_teams[i].satzpunkte_anzeigen == "ja", config_teams[i].reduzierte_ausgabe == "ja")
+          config_teams[i].satzpunkte_anzeigen == "ja", reducedOutput)
         break;  
       }  
       timeCounter += config_teams[i].anzeigedauer_s;
     }
 
     // draw advertisments
-    if (config_werbung.bilder.length > 0) {
-      var time_total_werbung = config_werbung.bilder.length * config_werbung.anzeigedauer_s;
-      var werbung_no = Math.floor((stateModule.getState() % time_total_werbung) / config_werbung.anzeigedauer_s);
-      loadWerbung(config_werbung.bilder[werbung_no]);
+    if (config_werbung.length > 0) {
+      var time_total_werbung = 0;
+      for (var i = 0; i < config_werbung.length; ++i) {
+        time_total_werbung += config_werbung[i].anzeigedauer_s;
+      }
+      var timeCurrent = stateModule.getState() % time_total_werbung;
+
+      // find adv to load
+      var timeCounter = 0;
+      for (var i = 0; i < config_werbung.length; ++i) {
+        if (timeCurrent >= timeCounter && timeCurrent < timeCounter + config_werbung[i].anzeigedauer_s) {
+          loadWerbung(config_werbung[i].bild);
+          break;
+        }
+        timeCounter += config_werbung[i].anzeigedauer_s;
+      }
     }
 
     // update state
@@ -206,5 +218,7 @@ function writeMannschaft(request, teamSize, setCount, displaySP, reducedOutput) 
 
 function loadWerbung(img) {
   var imgReplace = document.getElementById("img_center")
-  imgReplace.src = img + "?" + Date.now().toString();
+  if (imgReplace) {
+    imgReplace.src = img + "?" + Date.now().toString();
+  }
 }
