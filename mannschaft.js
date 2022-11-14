@@ -51,7 +51,24 @@ function loadConfigAndShow(request, stateModule, reducedOutput, showLanes) {
       var timeCounter = 0;
       for (var i = 0; i < config_werbung.length; ++i) {
         if (timeCurrent >= timeCounter && timeCurrent < timeCounter + config_werbung[i].anzeigedauer_s) {
-          loadWerbung(config_werbung[i].bild);
+          loadWerbung(config_werbung[i].bild, "img_center");
+          loadWerbung(config_werbung[i].bild, "img_1");
+          var img_2_shown = false;
+          for (var j = i + 1; j < config_werbung.length && !img_2_shown; ++j) {
+            if (config_werbung[j].anzeigedauer_s > 0) {
+              loadWerbung(config_werbung[j].bild, "img_2");
+              img_2_shown = true;
+            }
+          }
+          for (var j = 0; j < i && !img_2_shown; ++j) {
+            if (config_werbung[j].anzeigedauer_s > 0) {
+              loadWerbung(config_werbung[j].bild, "img_2");
+              img_2_shown = true;
+            }
+          }
+          if (!img_2_shown) {
+            loadWerbung(config_werbung[i].bild, "img_2");
+          }
           break;
         }
         timeCounter += config_werbung[i].anzeigedauer_s;
@@ -219,8 +236,8 @@ function writeMannschaft(request, teamSize, setCount, displaySP, reducedOutput) 
   }
 }
 
-function loadWerbung(img) {
-  var imgReplace = document.getElementById("img_center")
+function loadWerbung(img, id) {
+  var imgReplace = document.getElementById(id)
   if (imgReplace) {
     imgReplace.src = img + "?" + Date.now().toString();
   }
