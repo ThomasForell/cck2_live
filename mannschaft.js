@@ -130,12 +130,14 @@ function writeMannschaft(request, teamSize, setCount, displaySP, reducedOutput) 
     else
       el.innerHTML = "";
 
-    if (displaySP) {
-      el = document.getElementById("mp_center");
-      if (el != null) {
+    el = document.getElementById("mp_center");
+    if (el != null) {
+      if (displaySP) 
         el.innerHTML = data.mannschaft0.mp + " : " + data.mannschaft1.mp
-      }
+      else
+        el.innerHTML = ""
     }
+
 
     var spielerArray = [mannschaft.spieler0, mannschaft.spieler1,
     mannschaft.spieler2, mannschaft.spieler3,
